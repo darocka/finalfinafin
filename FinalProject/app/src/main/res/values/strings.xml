@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">Ultimate Baby Monitor</string>
     <string name="email_msg">Baby is awake!</string>
     <string name="sms_msg">Baby is awake!</string>
     <string name="login">Login</string>
@@ -66,8 +66,11 @@
     <string name="MobileNo">Mobile No.</string>
     <string name="emaila">Email Address.</string>
 
-
-
+<!--historyAvg-->
+    <string name="avg">Average Sleep Time:</string>
+    <string name="hours"> Hours, </string>
+    <string name="mins"> Mins,</string>
+    <string name="secs"> Secs</string>
 
 
 </resources>

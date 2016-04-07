@@ -85,7 +85,7 @@ public class MyServiceMoniter extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this, "Listening", Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "Listening", Toast.LENGTH_LONG).show();
         paused = false;
         running = true;
 
@@ -218,7 +218,7 @@ public class MyServiceMoniter extends Service {
                                                 elapsedTime(startTimer, endTimer));
 
                                         callIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        // callIntent.addFlags(Intent.FLAG_FROM_BACKGROUND);
+                                        callIntent.addFlags(Intent.FLAG_FROM_BACKGROUND);
                                         startActivity(callIntent);
                                         stopSelf();
 
@@ -403,7 +403,8 @@ public class MyServiceMoniter extends Service {
         //backgroundThread.interrupt();
 
         running = false;
-        Toast.makeText(this, "Stop Listening", Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "Stop Listening", Toast.LENGTH_LONG).show();
+        Log.d("CALLD","??");
 
     }
 

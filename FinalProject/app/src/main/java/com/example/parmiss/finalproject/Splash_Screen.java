@@ -31,8 +31,9 @@ public class Splash_Screen extends Activity {
         db.insertUserToUserTable("G", "1", "nnastili@sfu.ca", "7783163276");
         db.deleteUserFromUserTable("A");
 
-        Toast.makeText(this,db.getStringData(),Toast.LENGTH_SHORT).show();
-        Toast.makeText(this,db.getStringDataLOG(),Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this,db.getStringData(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,db.getStringDataLOG(),Toast.LENGTH_SHORT).show();
 
 
         // here initializing the shared preference

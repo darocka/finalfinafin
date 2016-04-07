@@ -98,7 +98,7 @@ public class options_Activity extends AppCompatActivity implements RadioGroup.On
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         // Do something
-                        Toast.makeText(getBaseContext(), "Start Rec", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getBaseContext(), "Start Rec", Toast.LENGTH_SHORT).show();
                         rec.setText("RECORDING");
                         rec.setTextColor(Color.RED);
                         recordAudio();
@@ -135,7 +135,7 @@ public class options_Activity extends AppCompatActivity implements RadioGroup.On
 
                         //sound4b.setVisibility(View.VISIBLE);
 
-                        Toast.makeText(getBaseContext(), "Stop Rec", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getBaseContext(), "Stop Rec", Toast.LENGTH_SHORT).show();
                         // stopRecord();
                         return true;
                 }
@@ -344,7 +344,7 @@ public class options_Activity extends AppCompatActivity implements RadioGroup.On
             editor.commit();
         }
 
-        Toast.makeText(getBaseContext(),String.valueOf(sharedPrefs.getBoolean("alertPlay", false)),Toast.LENGTH_SHORT).show();
+        // Toast.makeText(getBaseContext(),String.valueOf(sharedPrefs.getBoolean("alertPlay", false)),Toast.LENGTH_SHORT).show();
 
     }
 
@@ -356,7 +356,7 @@ public class options_Activity extends AppCompatActivity implements RadioGroup.On
                         "Play Music" + " " + sharedPrefs.getBoolean("alertPlay", false) + "\n"+
                 "Play for" + " " + sharedPrefs.getInt("durationSong", 10) + "\n";
 
-        Toast.makeText(getBaseContext(),msg,Toast.LENGTH_LONG).show();
+        // Toast.makeText(getBaseContext(),msg,Toast.LENGTH_LONG).show();
         super.onPause();
 
 
@@ -407,7 +407,7 @@ public class options_Activity extends AppCompatActivity implements RadioGroup.On
             myDataPath.mkdir();
         }
         pathOfAudio = myDataPath + "/" + username+".m4a";
-        Toast.makeText(this,pathOfAudio,Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this,pathOfAudio,Toast.LENGTH_SHORT).show();
     }
 
 

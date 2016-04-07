@@ -36,8 +36,8 @@ public class MyServiceMP extends Service {
                 String defaultSong ="android.resource://com.example.parmiss.finalproject/" + R.raw.lull1;
                 String pathOfRec = sharedPrefs.getString("PathToCustom", "X");
 
-                shw("Da Path" + pathOfRec);
-                shw("Da exist" + String.valueOf(recordingExists));
+                //shw("Da Path" + pathOfRec);
+                //shw("Da exist" + String.valueOf(recordingExists));
 
                 // Initialize
                 Uri song = Uri.parse(defaultSong);

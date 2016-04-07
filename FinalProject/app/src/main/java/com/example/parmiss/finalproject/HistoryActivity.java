@@ -117,7 +117,7 @@ public class HistoryActivity extends Activity implements AdapterView.OnItemClick
         double hours = sec / 3600;
         double minutes = (sec % 3600) / 60;
         double seconds = sec % 60;
-        return "Average Sleep Time:\n \t "+String.valueOf(Math.round(hours))+" Hours, "+ String.valueOf(Math.round(minutes))+" Mins, and " + String.valueOf(Math.round(seconds)+" Secs");
+        return getResources().getString(R.string.avg)+"\n \t "+String.valueOf(Math.round(hours))+getResources().getString(R.string.hours)+ String.valueOf(Math.round(minutes))+getResources().getString(R.string.mins) + String.valueOf(Math.round(seconds)+getResources().getString(R.string.secs));
     }
 
 

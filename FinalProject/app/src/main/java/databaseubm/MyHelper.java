@@ -51,11 +51,11 @@ public class MyHelper extends SQLiteOpenHelper {
         try {
             db.execSQL(CREATE_TABLE_USER);
             db.execSQL(CREATE_TABLE_LOG);
-            Toast.makeText(context, "onCreate() called", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "onCreate() called", Toast.LENGTH_LONG).show();
             // db.execSQL(Insert_Data);
 
         } catch (SQLException e) {
-            Toast.makeText(context, "exception onCreate() db-", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "exception onCreate() db-", Toast.LENGTH_LONG).show();
             // Log.e("DEXC", e.toString());
         }
     }
@@ -66,9 +66,9 @@ public class MyHelper extends SQLiteOpenHelper {
             db.execSQL(DROP_TABLE_USER);
             db.execSQL(DROP_TABLE_LOG);
             onCreate(db);
-            Toast.makeText(context, "onUpgrade called", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "onUpgrade called", Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
-            Toast.makeText(context, "exception onUpgrade() db", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "exception onUpgrade() db", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -42,7 +42,7 @@ public class Login extends Activity implements OnClickListener {
         // Get DB
         db = new MyDatabase(this);
 
-        Toast.makeText(this,"jj" + db.getStringData(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,db.getStringData(),Toast.LENGTH_SHORT).show();
 
 
         //str_getID = Splash_Screen.sh.getString("name", null);

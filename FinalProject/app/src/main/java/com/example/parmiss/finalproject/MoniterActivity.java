@@ -58,6 +58,8 @@ public class MoniterActivity extends Activity  {
     String email;
     String alert;
 
+    Boolean done=false;
+    Boolean stopB=false;
 
 
     float valueT=10000;
@@ -79,7 +81,7 @@ public class MoniterActivity extends Activity  {
 
         public void start(View v) {
             Intent intent = new Intent (this, MyServiceMoniter.class);
-
+            done = false;
         //intent.putExtra("threshold",(int) valueT);
         //intent.putExtra("delay",(int) (delayT*1000));
         //intent.putExtra("mobile", number);
@@ -92,6 +94,7 @@ public class MoniterActivity extends Activity  {
 
             threshold.setEnabled(false);
             delay.setEnabled(false);
+            stopB=false;
 
 
             if(isStarted==false){
@@ -126,10 +129,11 @@ public class MoniterActivity extends Activity  {
     }
 
     public void stop(View v) {
+        stopB=false;
 
         //the service is started
         if(isStarted==true) {
-
+            done = false;
 
             Intent intent = new Intent (this, MyServiceMoniter.class);
             stopService(intent); //the service is stopped
@@ -206,7 +210,7 @@ public class MoniterActivity extends Activity  {
 
         alert = sharedPrefs.getString("alertType","call");
 
-        Toast.makeText(this,"Hello " + username + " with " + "email "+email + " with " + "phone "+number + " with alert "+ alert,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"Hello " + username + " with " + "email "+email + " with " + "phone "+number + " with alert "+ alert,Toast.LENGTH_SHORT).show();
 
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
         Drawable drawRed = getResources().getDrawable(R.drawable.custom_redprogressbar);
@@ -349,31 +353,44 @@ public class MoniterActivity extends Activity  {
     };
 
     private void receivedBroadcast(Intent ri) {
-
+        int x = 0;
         // Put your receive handling code here
         int level = ri.getExtras().getInt("X");
         timepassed = ri.getExtras().getLong("time");
 
-        if(level > valueT){
+        if(level > valueT && done==false){
             amplitudeLevelAbove.setProgress(level - (int) valueT);
             amplitudeLevelBelow.setProgress(amplitudeLevelBelow.getMax());
 
             if(0>((long) (delayT*1000)-timepassed)){
-                countDown.setText("ALERT");
+                countDown.setText(getResources().getString(R.string.alert));
+                done = true;
 
-//                Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//                    public void run() {
-//                        countDown.setText("");
-//                        amplitudeLevelAbove.setProgress(0);
-//                        amplitudeLevelBelow.setProgress(amplitudeLevelBelow.getMax());
-//
-//                    }
-//                }, 2000);
+                SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+                String myAlert = sharedPrefs.getString("alertType","call");
+
+                if(myAlert.equals("call")) {
+                    threshold.setEnabled(true);
+                    delay.setEnabled(true);
+                    isStarted = false;
+                    buttonStart.setEnabled(true);
+                    buttonStop.setEnabled(false);
+                    stopB=true;
+                }
+
+
+
+
 
             }
             else {
-                countDown.setText(String.valueOf((new SimpleDateFormat("mm:ss")).format(new Date((long) (delayT * 1000) - timepassed))));
+                if(stopB==true){
+                    countDown.setText("");
+                    // Toast.makeText(this,getResources().getString(R.string.alert),Toast.LENGTH_SHORT).show();
+                }else{
+                    countDown.setText(String.valueOf((new SimpleDateFormat("mm:ss")).format(new Date((long) (delayT * 1000) - timepassed))));
+                }
+
             }
 
             //int we = (new SimpleDateFormat("mm:ss")).format(new Date(timepassed)) - (new SimpleDateFormat("mm:ss")).format(new Date(timepassed));
@@ -431,7 +448,7 @@ public class MoniterActivity extends Activity  {
         amplitudeLevelAbove.setProgress(500);
 
         // wd.setText( String.valueOf(upperValue)+ " " + String.valueOf(valueT));
-        thresholdTextView.setText("Volume Threshold : " + String.valueOf((int) valueT));
+        thresholdTextView.setText(getResources().getString(R.string.VolumeThreshold)+" : " + String.valueOf((int) valueT));
     }
 
 
@@ -439,7 +456,7 @@ public class MoniterActivity extends Activity  {
         delay.setProgress(x-3);
         delayT = x;
         // wd.setText( String.valueOf(upperValue)+ " " + String.valueOf(valueT));
-        delayTextView.setText("Delay Threshold : " + String.valueOf((int) delayT));
+        delayTextView.setText(getResources().getString(R.string.DelayThreshold)+" : " + String.valueOf((int) delayT));
     }
 
 
