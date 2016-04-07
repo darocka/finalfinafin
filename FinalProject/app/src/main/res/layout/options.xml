@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bcd1f7">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/SelectActionOnAlert"
+        android:id="@+id/selectThreshold"
+        android:layout_gravity="left"
+        android:background="#80aeff"
+        android:textStyle="bold" />
+
+
+
+    <RadioGroup
+        android:id="@+id/selectAlertRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonOK"
+        >
+        <RadioButton
+            android:id="@+id/callAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/call"
+            android:textColor="#000000" />
+        <RadioButton
+            android:id="@+id/smsAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sms"
+            android:textColor="#000000"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/smsEmailAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/smsandemail"
+            android:textColor="#000000"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/EmailAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textColor="#000000"
+            android:checked="false" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioYellowBack"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Yellow"-->
+            <!--android:textColor="#ffff00"-->
+            <!--android:textSize="20sp" />-->
+    </RadioGroup>
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/playSongOnAlert"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/PlaySongSwitch"
+        android:checked="false"
+        android:background="#80aeff"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+        android:id="@+id/selectAlertBabyRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonOK"
+        >
+        <RadioButton
+            android:id="@+id/sound1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Song1"
+            android:textColor="#000000" />
+        <RadioButton
+            android:id="@+id/sound2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song2"
+            android:textColor="#000000"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/sound3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="White Noise"
+            android:textColor="#000000"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/sound4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custome Sound"
+            android:textColor="#000000"
+            android:checked="false" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/playSongFor"
+        android:id="@+id/selectDelayThreshold"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:background="#80aeff" />
+
+
+    <RadioGroup
+        android:id="@+id/selectSongDurationRG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/fbplacename" >
+
+        <RadioButton
+            android:id="@+id/sec10"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/seconds10" />
+
+        <RadioButton
+            android:id="@+id/sec20"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/seconds20"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/sec30"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/seconds30"
+            android:checked="false" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/record"
+        android:id="@+id/rec"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/planets_spinner"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Load"
+            android:id="@+id/loadPreset"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Save"
+            android:id="@+id/savePreset"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

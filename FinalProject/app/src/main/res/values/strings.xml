@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+    <string name="email_msg">Baby is awake!</string>
+    <string name="sms_msg">Baby is awake!</string>
+    <string name="login">Login</string>
+
+    <!--Monitor Activity-->
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="Options">Options</string>
+    <string name="VolumeThreshold">Volume Threshold</string>
+    <string name="DelayThreshold">Delay Threshold</string>
+    <string name="alert">ALERT</string>
+
+
+
+    <!--Options Activity-->
+    <string name="SelectActionOnAlert">Select Action On Alert : </string>
+    <string name="call">Call</string>
+    <string name="sms">Send SMS</string>
+    <string name="smsandemail">Send SMS and Email with Picture</string>
+    <string name="email">Send Email with Picture</string>
+
+
+    <string name="playSongOnAlert">Play Sound On Alert : </string>
+    <string name="sound1">Song 1</string>
+    <string name="sound2">Song 2</string>
+    <string name="sound3">White Noise</string>
+    <string name="sound4">Pre Recorded</string>
+
+    <string name="playSongFor">Play Song For:</string>
+    <string name="seconds10">10 seconds</string>
+    <string name="seconds20">20 seconds</string>
+    <string name="seconds30">30 seconds</string>
+
+    <string name="record">Record</string>
+    <string name="recording">Recording</string>
+    <string name="wait">Wait</string>
+
+    <string name="Load">Load</string>
+    <string name="Save">Save</string>
+
+    <!--HISTORY ACT-->
+    <string name="loghistory">HISTORY LOG</string>
+    <string name="DNE">NO DATA EXIST</string>
+
+    <!--Login-->
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+
+
+    <!--LOGINREGISTER-->
+    <string name="Register">Register</string>
+    <string name="Logout">Logout</string>
+
+
+
+    <!--LOGINREGISTER-->
+    <string name="menu">Menu</string>
+    <string name="monitor">Monitor</string>
+    <string name="history">History</string>
+    <string name="guide">Guide</string>
+
+    <!--REGISTER-->
+    <string name="ConfirmPWD">Confirm Password</string>
+    <string name="MobileNo">Mobile No.</string>
+    <string name="emaila">Email Address.</string>
+
+
+
+
+
+</resources>
+
